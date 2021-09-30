@@ -1,5 +1,5 @@
-# beachbots2020
-This is the repository for the BeachBots MQP 2020
+# beachbots2021
+This is the repository for the BeachBots MQP 2021
 ## Dependencies
 
 ### RPi.GPIO
