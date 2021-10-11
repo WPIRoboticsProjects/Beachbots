@@ -54,17 +54,18 @@ input("Press space to start IMU heading control")
 IMU = AdafruitIMU()
 
 Kp = 4
+maxAngle = 5
 while(True):
     # get current heading
     curr = IMU.get_yaw()
     print(curr)
 
-    if(curr < -5): #robot must turn right
+    if(curr < -maxAngle): #robot must turn right
         pi_lpwmf.ChangeDutyCycle(abs(curr*Kp))
         pi_lpwmb.ChangeDutyCycle(0)
         pi_rpwmf.ChangeDutyCycle(0)
         pi_rpwmb.ChangeDutyCycle(abs(curr*Kp))
-    elif(curr > 5): #robot must turn left
+    elif(curr > maxAngle): #robot must turn left
         pi_lpwmf.ChangeDutyCycle(0)
         pi_lpwmb.ChangeDutyCycle(abs(curr*Kp))
         pi_rpwmf.ChangeDutyCycle(abs(curr*Kp))
