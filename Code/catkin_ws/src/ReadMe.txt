@@ -29,3 +29,17 @@ Remember:
 	$ cd pybind11
 	$ git submodule init
 	$ git submodule update
+
+    On robot IP's
+	Both the SmallBot and BaseBot have the /etc/hosts file configured to match the correct IP's with
+		SmallBotIP -> 192.168.4.11
+		BaseBotIP -> 192.168.4.12
+	If you need to change one of the IPs
+		On Both machines:
+			Update the /etc/hosts file with the new IP
+		On the machine being changed
+			Update the /etc/dhcpcd.conf file with the new static IP
+
+	Assuming you are running roscore on the BaseBot, in every terminal:
+		export ROS_HOSTNAME=BaseBotIP
+		export ROS_MASTER_URI=http://BaseBotIP:11311
