@@ -1,0 +1,16 @@
+<launch>
+    <arg name="ID" value="1" doc="The ID of the smallbot"/>
+    <arg name="CLKPIN" value="26" doc="The Clock Pin of the sifter stepper motor"/>
+    <arg name="DIRPIN" value="21" doc="The Direction Pin of the sifter stepper motor"/>
+    <arg name="ENPIN" value="20" doc="The Enable Pin of the sifter stepper motor"/>
+    <arg name="HOMEPIN" value="0" doc="The Home Pin of the sifter stepper motor homing switch"/>
+
+    <node name="Sifter" pkg="small_bot" type="Sifter.py"
+        <param name="ID" value="$(arg ID)" type="str"/>
+        <param name="CLKPIN" value="$(arg CLKPIN)" type="int"/>
+        <param name="DIRPIN" value="$(arg DIRPIN)" type="int"/>
+        <param name="ENPIN" value="$(arg ENPIN)" type="int"/>
+        <param name="HOMEPIN" value="$(arg HOMEPIN)" type="int"/>
+    </node>
+
+<launch>
